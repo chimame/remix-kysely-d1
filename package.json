@@ -8,6 +8,7 @@
     "dev": "npm-run-all build --parallel \"dev:*\"",
     "start": "cross-env NODE_ENV=production npm run wrangler",
     "typecheck": "tsc",
+    "migration": "zx ./scripts/migration_apply.mjs",
     "wrangler": "wrangler pages dev ./public --local --persist"
   },
   "dependencies": {
@@ -34,7 +35,8 @@
     "prisma": "^4.13.0",
     "prisma-kysely": "^1.2.0",
     "typescript": "^4.9.5",
-    "wrangler": "^2.15.1"
+    "wrangler": "^2.15.1",
+    "zx": "^7.2.1"
   },
   "engines": {
     "node": ">=16.13"
