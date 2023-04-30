@@ -11,12 +11,12 @@ datasource db {
 }
 
 generator kysely {
-    provider = "prisma-kysely"
+  provider = "prisma-kysely"
 
-    // Optionally provide a destination directory for the generated file
-    // and a filename of your choice
-    output = "../app/database"
-    fileName = "types.ts"
+  // Optionally provide a destination directory for the generated file
+  // and a filename of your choice
+  output   = "../app/database"
+  fileName = "types.ts"
 }
 
 model User {
@@ -27,10 +27,12 @@ model User {
 }
 
 model Post {
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   title     String
   content   String?
-  published Boolean @default(false)
-  author    User    @relation(fields: [authorId], references: [id])
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
   authorId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

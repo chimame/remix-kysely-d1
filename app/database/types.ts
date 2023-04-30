@@ -9,6 +9,8 @@ export type Post = {
     content: string | null;
     published: Generated<number>;
     authorId: number;
+    createdAt: Generated<string>;
+    updatedAt: string;
 };
 export type User = {
     id: Generated<number>;
