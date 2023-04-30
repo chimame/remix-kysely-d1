@@ -1,2 +1,8 @@
 compatibility_date = "2022-04-05"
 compatibility_flags = ["streams_enable_constructors"]
+
+[[ d1_databases ]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "kysely-sample"
+database_id = "fef86041-50be-42b0-a31a-49feb9ba02c1"
+migrations_dir = ".wrangler/migrations"
